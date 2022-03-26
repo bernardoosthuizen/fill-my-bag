@@ -1,0 +1,131 @@
+.container {
+    width: 100vw;
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    flex-grow: 3;
+    width: 40%;
+    padding-left: 5vw;
+}
+
+.buttonPrimary {
+    background-color:white;
+    font-size: 16px;
+    color: var(--primary);
+    border: 2px solid ;
+    border-color: var(--primary);
+    border-radius: 25px;
+    padding: 10px;
+    width: 120px;
+    transition: all .2s ease-in-out; 
+    margin-left: 20px;
+}
+
+.buttonSecondary {
+    background-color:var(--primary);
+    font-size: 16px;
+    color: white;
+    border: 2px solid ;
+    border-color: var(--primary);
+    border-radius: 25px;
+    padding: 10px;
+    width: 120px;
+    transition: all .2s ease-in-out; 
+    margin-left: 20px;
+}
+
+.buttonPrimary:hover {
+    transform: scale(1.02); 
+    box-shadow:2px 2px 2px 1px rgb(198, 198, 198); 
+    cursor: pointer;
+}
+
+.buttonSecondary:hover {
+    transform: scale(1.02); 
+    box-shadow:2px 2px 2px 1px rgb(198, 198, 198); 
+    cursor: pointer;
+}
+
+.linksMenu {
+    width: fit-content;
+    display: flex;
+    align-items: center;        
+    justify-content: space-around;
+    padding-right: 2vw;
+}
+
+.linksItem {
+    padding: 30px;
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 400;
+    transition: all .2s ease-in-out;  
+}
+
+.linksItem:hover{
+    transform: scale(1.1);  
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobileMenu {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .buttonPrimary {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 0;
+    }
+    .buttonSecondary {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    .mobileMenu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        justify-content: center;
+    }
+
+    .linksMenu {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        justify-content: flex-start;
+        padding-top: 10%;
+        padding-right: 0;
+
+    }
+
+    .linksItem {
+        font-weight: 400;
+        transition: all .2s ease-in-out; 
+        align-self: center; 
+    }
+
+      
+     
+  }
