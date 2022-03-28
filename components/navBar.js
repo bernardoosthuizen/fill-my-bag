@@ -5,6 +5,7 @@ import { useState } from 'react'
 import checkWindowWidth from '../helpers/checkWindowWidth';
 import Hamburger from 'hamburger-react'
 import { motion } from 'framer-motion'
+import logo from '../public/logo-01.svg'
 
 const NavBar = () => {
 
@@ -30,12 +31,19 @@ const NavBar = () => {
             className={styles.container}
         >
             <div className={styles.mobileMenu}>
-                <div className={styles.logo}>
-                    {/* <Image
-                    src={logo}
-                    alt="My moves logo"
-                    width={150} 
-                    />   */}
+                <div className={styles.logo} >
+                    <Link href='/' >
+                        <a>
+                            <Image
+                            src={logo}
+                            alt="Money bag logo"
+                            width={50} 
+                            height={50} 
+                            href='/'
+                            />
+                        </a>
+                    </Link>
+                      
                 </div>
                 <div className={styles.hamburger}>
                     <Hamburger toggled={isShowing} toggle={setIsShowing} />
@@ -60,8 +68,13 @@ const NavBar = () => {
                         </Link>  
                     );
                 })}
-                <button className={styles.buttonPrimary}>Sign Up</button>
-                <button className={styles.buttonSecondary}>Login</button>
+                <Link href='/signUp'  >
+                    <button className={styles.buttonPrimary}>Sign Up</button>
+                </Link>
+                <Link href='/signup'  >
+                    <button className={styles.buttonSecondary}>Login</button>
+                </Link>
+                
             </motion.nav>
             : null
             }
