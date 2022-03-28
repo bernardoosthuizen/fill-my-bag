@@ -1,12 +1,11 @@
 import { initializeApp } from "firebase/app";
-import dotenv from 'dontenv';
 import { getAuth } from "firebase/auth";
 
-dotenv.config()
+
  
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_PUBLIC_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  apiKey: process.env.firebaseApiKey,
+  authDomain: "fill-my-bag.firebaseapp.com",
   projectId: "fill-my-bag",
   storageBucket: "fill-my-bag.appspot.com",
   messagingSenderId: "522155540819",

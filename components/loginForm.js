@@ -1,4 +1,4 @@
-import styles from './SignUpForm.module.css'
+import styles from './LoginForm.module.css'
 import Image from 'next/image'
 import Link from "next/link";
 import { useState } from 'react'
@@ -7,23 +7,25 @@ import Hamburger from 'hamburger-react'
 
 import logo from '../public/logo-01.svg'
 import { useAuth } from '../context/AuthContext';
+import { useRouter } from 'next/router';
 
-const SignUpForm = () => {
+const LoginForm = () => {
+    const router =  useRouter()
 
-    const { user, signup } = useAuth()
+    const { user, login } = useAuth()
     
 
     const [data, setData] = useState ({
-        name:'',
         email:'',
         password:'',
     })
 
-    const registerUser = async (e) => {
+    const loginUser = async (e) => {
         e.preventDefault() 
 
         try {
-            await signup(data.email, data.password)
+            await login(data.email, data.password)
+            router.push('/dashboard')
         } catch (error) {
             console.error(error)
         }
@@ -54,7 +56,7 @@ const SignUpForm = () => {
                             height={150} 
                             href='/'
                             />
-                    <h1>Sign Up</h1>
+                    <h1>Login </h1>
                     <h2>Get tipped now!</h2>
                     
                </div>
@@ -62,23 +64,8 @@ const SignUpForm = () => {
                 <div className={styles.formContainer}>
                     <h1>Enter your details ...</h1>
                     <div className={styles.form}>
-                        <form onSubmit={registerUser}>
-                            <div>
-                                
-                                <input 
-                                    id="name" 
-                                    type="text" 
-                                    autoComplete="off" 
-                                    placeholder="Username..." 
-                                    required 
-                                    onChange={(e) =>
-                                        setData({
-                                          ...data,
-                                          name: e.target.value,
-                                        })
-                                      }
-                                      value={data.name}/>
-                            </div>
+                        <form onSubmit={loginUser}>
+                            
                             <div>
                                 <input 
                                     id="email" 
@@ -110,7 +97,7 @@ const SignUpForm = () => {
                                       value={data.password}/>
                             </div>
                             <div className={styles.button}>
-                                <button className={styles.buttonSecondary} type="submit">Register</button>
+                                <button className={styles.buttonSecondary} type="submit">Login</button>
                             </div>
                             
                         </form>
@@ -122,4 +109,4 @@ const SignUpForm = () => {
     )
 }
 
-export default SignUpForm
+export default LoginForm

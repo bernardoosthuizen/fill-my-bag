@@ -6,10 +6,13 @@ import checkWindowWidth from '../helpers/checkWindowWidth';
 import Hamburger from 'hamburger-react'
 import { motion } from 'framer-motion'
 import logo from '../public/logo-01.svg'
+import { useAuth } from '../context/AuthContext';
 
 const NavBar = () => {
 
     const [isShowing, setIsShowing] = useState(false)
+
+    const { user } = useAuth()
 
     if (typeof window !== 'undefined') {
         checkWindowWidth()
@@ -68,12 +71,21 @@ const NavBar = () => {
                         </Link>  
                     );
                 })}
-                <Link href='/signUp'  >
-                    <button className={styles.buttonPrimary}>Sign Up</button>
+                {user ? (
+                    <Link href='/dashboard'  >
+                    <button className={styles.buttonPrimary}>Dashboard</button>
                 </Link>
-                <Link href='/signup'  >
-                    <button className={styles.buttonSecondary}>Login</button>
-                </Link>
+                ) : (
+                    <>
+                        <Link href='/signUp'  >
+                            <button className={styles.buttonPrimary}>Sign Up</button>
+                        </Link>
+                        <Link href='/login'  >
+                            <button className={styles.buttonSecondary}>Login</button>
+                        </Link>
+                    </>
+                )}
+                
                 
             </motion.nav>
             : null

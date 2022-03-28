@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1700px;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerContent {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    max-width: 1700px;
+    min-height: 80vh;
+    border-radius: 25px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    padding-left: 5vw;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    width: 80%;
+    height: 100%;
+}
+
+.form form{
+    width: 100%;
+}
+
+.form input{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+    padding: 3%;
+    margin-top: 5vh;
+    box-shadow:0px 2px 0px 0px rgb(198, 198, 198);
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.buttonSecondary {
+    background-color:var(--primary);
+    font-size: 16px;
+    color: white;
+    border: 2px solid ;
+    border-color: var(--primary);
+    border-radius: 25px;
+    padding: 10px;
+    width: 120px;
+    transition: all .2s ease-in-out; 
+    margin-left: 20px;
+}
+
+.buttonSecondary:hover {
+    transform: scale(1.02); 
+    box-shadow:2px 2px 2px 1px rgb(198, 198, 198); 
+    cursor: pointer;
+}
+
+.vl {
+    border-left: 1px solid black;
+    height: 80vh;
+  }
+
+.textContainer {
+    width: 40%;
+    height: 100%;
+    align-self: flex-start;
+}
+
+.textContainer h1{
+    font-size: 70px;
+}
+
+.textContainer h2{
+    font-size: 40px;
+}
+
+.hamburger {
+    display: flex;
+    align-self: flex-end;
+    transition: all .2s ease-in-out;  
+}
+
+.hamburger:hover {
+    scale: 1.1;
+}

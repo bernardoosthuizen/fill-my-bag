@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import SignUpForm from '../components/signUpForm'
+import LoginForm from '../components/loginForm'
 import { useAuth } from '../context/AuthContext'
 
 export default function SignUp() {
@@ -15,7 +15,7 @@ export default function SignUp() {
       </Head>
       <main className={styles.main}>
       
-       <SignUpForm />
+       <LoginForm />
       </main>
 
       
