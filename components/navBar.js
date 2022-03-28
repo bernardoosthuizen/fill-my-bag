@@ -22,7 +22,7 @@ const NavBar = () => {
 
     const links = [
         {name: 'Github', path: 'https://github.com/bernardoosthuizen/fill-my-bag'},
-        {name: 'Contact', path: 'https://github.com/bernardoosthuizen/fill-my-bag'},
+        {name: 'Contact', path: 'https://bernie.codes'},
         
     ]
     
