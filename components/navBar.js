@@ -7,12 +7,15 @@ import Hamburger from 'hamburger-react'
 import { motion } from 'framer-motion'
 import logo from '../public/logo-01.svg'
 import { useAuth } from '../context/AuthContext';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
 
     const [isShowing, setIsShowing] = useState(false)
 
-    const { user } = useAuth()
+    const router = useRouter()
+
+    const { user, logout } = useAuth()
 
     if (typeof window !== 'undefined') {
         checkWindowWidth()
@@ -72,9 +75,20 @@ const NavBar = () => {
                     );
                 })}
                 {user ? (
+                    router.pathname === '/dashboard' ? (
+                        <button 
+                        onClick= {() => {
+                            logout()
+                            router.push('/login')
+                          }}
+                        className={styles.buttonPrimary}>
+                            Logout
+                        </button> 
+                    ) : (
                     <Link href='/dashboard'  >
-                    <button className={styles.buttonPrimary}>Dashboard</button>
-                </Link>
+                        <button className={styles.buttonPrimary}>Dashboard</button> 
+                    </Link>
+                    )
                 ) : (
                     <>
                         <Link href='/signUp'  >

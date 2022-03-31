@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1700px;
+    min-height: 70vh;
+}
+
+.title {
+    background-color: aqua;
+    display: flex;
+    align-items: flex-start;
+    justify-self: flex-start;
+    font-size: 30px;
+}
+

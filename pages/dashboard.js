@@ -1,28 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/navBar'
-import Hero from '../components/hero'
-import { LayoutGroupContext } from 'framer-motion'
-import { useAuth } from '../context/AuthContext'
-import { useRouter } from 'next/router'
+import Dashboard from '../components/dashboard'
 
-export default function Dashboard() {
 
-  const {user, logout } = useAuth()
-
-  const router = useRouter()
-
-   //    useEffect(() => {
-    //         const collectionRef = collection(db, "users")
-
-    //         const querySnapshot = getDocs(collectionRef);
-
-    //         const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
-    //             console.log(querySnapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
-    //         })
-    //         return unsubscribe
-    //    }, [])
+export default function Dash() {
 
   return (
     <div className={styles.container}>
@@ -33,16 +15,7 @@ export default function Dashboard() {
       </Head>
       <main className={styles.main}>
         <Navbar/>
-       <h1>This is the dashboard</h1>
-       
-                    <button 
-                      onClick= {() => {
-                        logout()
-                        router.push('/login')
-                      }}
-                      className={styles.buttonPrimary}
-                    >Logout</button>
-                
+        <Dashboard/>         
       </main>
 
       
