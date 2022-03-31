@@ -13,6 +13,17 @@ export default function Dashboard() {
 
   const router = useRouter()
 
+   //    useEffect(() => {
+    //         const collectionRef = collection(db, "users")
+
+    //         const querySnapshot = getDocs(collectionRef);
+
+    //         const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
+    //             console.log(querySnapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+    //         })
+    //         return unsubscribe
+    //    }, [])
+
   return (
     <div className={styles.container}>
       <Head>

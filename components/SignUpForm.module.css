@@ -30,7 +30,7 @@
     display: flex;
     flex-direction: row;
     align-content: flex-end;
-    width: 80%;
+    width: 500px;
     height: 100%;
 }
 
@@ -105,3 +105,46 @@
 .hamburger:hover {
     scale: 1.1;
 }
+
+.userDetails {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.userDetails h1{
+    font-size: 50px;
+}
+
+.radioButtons {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    width: 300px;
+    margin-top: 5vh;
+}
+
+.radioItem {
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.radioButtons input{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    border: none;
+    width: 50px;
+    box-shadow:0px 0px 0px 0px;
+}
+
+.form p {
+    margin-top: 5vh;
+}
+
