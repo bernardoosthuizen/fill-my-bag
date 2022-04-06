@@ -31,17 +31,23 @@ const Dashboard = () => {
                 return docSnap._document.data.value.mapValue.fields 
             }
             fetchData().then((data) => {
+                
+                const currencyArray =[]
+                
+                data.currencies.arrayValue.values.map((c) => {
+                    currencyArray.push(c.stringValue)
+                })
+                
                 setData({
                     name: data.name.stringValue,
                     email: data.email.stringValue,
-                    currency: data.currencies.arrayValue.values,
+                    currency: currencyArray,
                     address: data.address.stringValue,
                   })
                 
             })
        }, [])
 
-       console.log(data)
     return(
         <motion.div 
             initial={{ opacity: 0 }} 
@@ -49,12 +55,37 @@ const Dashboard = () => {
             transition={{ duration: 1 }} 
             className={styles.container}
         >
-            <div className={styles.title}>
-                <h1>Hello {data.name}</h1>
-            </div>
+            {data.name ? 
+            <>
+                <div className={styles.title}>
+                    <h1>Hello {data.name}</h1>
+                </div>
+                <div className={styles.profileDetails}>
+                    <h2>My Link</h2>
+                    <h2>Your profile</h2>
+
+                    <h3>Crypto Wallet Address</h3>
+                    <p>{data.address}</p>
+                    <div>
+
+                    </div>
+                    <h3>Accepted Cryptocurrencies</h3>
+                    {data.currency.map((currency) => {
+                          return (
+                              <p key={currency} >{currency}</p>
+                          )
+                    })
+                    }
+                </div>
+            </>
             
-        
-        
+            :
+            <div className={styles.title}></div>
+            }
+
+
+           
+            
         </motion.div>
     )
 }

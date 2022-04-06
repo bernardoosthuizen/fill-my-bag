@@ -7,10 +7,15 @@
 }
 
 .title {
-    background-color: aqua;
     display: flex;
     align-items: flex-start;
     justify-self: flex-start;
     font-size: 30px;
+}
+
+.profileDetails {
+    background-color: aquamarine;
+    width: 100%;
+    min-height: 60vh;
 }
 
